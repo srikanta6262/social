@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<title>Winku Social Network Toolkit</title>
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}" type="text/css">
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+
+
+</head>
+<body>
+<!--<div class="se-pre-con"></div>-->
+<div class="theme-layout">
+	<div class="topbar stick">
+		<div class="logo">
+			<a title="" href="newsfeed.html"><img src="{% static "images/logo.png" %}" alt=""></a>
+		</div>
+		<div class="top-area">
+			<ul>
+				<li style="margin-top:10px;"><a href="/index" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li><a href="/admin" title="Home" data-ripple=""><img src="{% static 'images/resources/admin.jpg' %}" style="width:40px;height:40px;margin-top:5px;" alt=""></a></li>
+			</ul>
+		</div>
+	</div><!-- topbar -->
+
+	<section>
+		<div class="feature-photo">
+			<figure><img src="{% static "images/resources/timeline-1.jpg" %}" alt=""></figure>
+
+			<div class="container-fluid">
+				<div class="row merged">
+					<div class="col-lg-2 col-sm-3">
+						<div class="user-avatar">
+							<figure>
+								<img src="{% static "images/resources/user-avatar.jpg" %}" alt="">
+							</figure>
+						</div>
+					</div>
+					<div class="col-lg-10 col-sm-9">
+						<div class="timeline-info">
+							<ul>
+								<li class="admin-name">
+								  <h5>GAYATRI SAHU</h5>
+								  <span>Admin</span>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- top area -->
+
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-3">
+
+								<aside class="sidebar static">
+								</aside>
+							</div><!-- sidebar -->
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="about">
+										<div class="personal">
+											<h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
+											<p>
+                        I am a person who is positive about every aspect of life.
+                        There are many things I like to do, to see, and to experience. I like to read, I like to write;
+                      </p>
+										</div>
+										<div class="d-flex flex-row mt-2">
+											<ul class="nav nav-tabs nav-tabs--vertical nav-tabs--left" >
+												<li class="nav-item">
+													<a href="#basic" class="nav-link active" data-toggle="tab" >Basic info</a>
+												</li>
+												<li class="nav-item">
+													<a href="#location" class="nav-link" data-toggle="tab" >location</a>
+												</li>
+												<li class="nav-item">
+													<a href="#work" class="nav-link" data-toggle="tab" >work and education</a>
+												</li>
+												<li class="nav-item">
+													<a href="#interest" class="nav-link" data-toggle="tab"  >interests</a>
+												</li>
+												<li class="nav-item">
+													<a href="#lang" class="nav-link" data-toggle="tab" >languages</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane fade show active" id="basic" >
+													<ul class="basics">
+														<li><i class="ti-user"></i>GAYATRI SAHU</li>
+														<li><i class="ti-map-alt"></i>live in Khorda</li>
+														<li><i class="ti-mobile"></i>+917608864804</li>
+														<li><i class="ti-email"></i><a href="#" class="__cf_email__" data-cfemail="3c4553494e515d55507c59515d5550125f5351">gayatrisahu2601@gmail.com</a></li>
+														<li><i class="ti-world"></i>www.yoursite.com</li>
+													</ul>
+												</div>
+												<div class="tab-pane fade" id="location" role="tabpanel">
+													<div class="location-map">
+														<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59876.5578050716!2d85.78508829120182!3d20.288472846967945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8637f30c4b70a955!2sOdisha%20University%20of%20Agriculture%20%26%20Technology!5e0!3m2!1sen!2sin!4v1595934629914!5m2!1sen!2sin"
+														width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+													</div>
+												</div>
+												<div class="tab-pane fade" id="work" role="tabpanel">
+													<div>
+
+														<a href="#" title="">Mca</a>
+														<p>OUAT Unversity</p>
+														<ul class="education">
+															<li><i class="ti-facebook"></i> BSC from PN AUTONOMOUS COLLEGE</li>
+														</ul>
+													</div>
+												</div>
+												<div class="tab-pane fade" id="interest" role="tabpanel">
+													<ul class="basics">
+														<li>DANCING</li>
+														<li>ACTING</li>
+														<li>INTERNET BROWSING</li>
+														<li>PHOTOGRAPHY</li>
+													</ul>
+												</div>
+												<div class="tab-pane fade" id="lang" role="tabpanel">
+													<ul class="basics">
+														<li>ENGLISH</li>
+														<li>HINDI</li>
+														<li>ODIA</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!-- centerl meta -->
+							<div class="col-lg-3">
+								<aside class="sidebar static">
+								</aside>
+							</div><!-- sidebar -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="/index" title=""><img src="{% static "images/logo.png" %}" alt=""></a>
+							</div>
+							<p>
+                I am a person who is positive about every aspect of life.
+                There are many things I like to do, to see, and to experience. I like to read, I like to write;
+                I like to think, I like to dream; I like to talk, I like to listen.
+                I like to see the sunrise in the morning, I like to see the moonlight at night;
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>Odisha University of Agriculture & Technology.
+                  Unit 8, Surya Nagar, Bhubaneswar, Odisha 751003
+                </p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>+91-7608864804</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/" title="">facebook</a></li>
+							<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+							<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+							<li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+							<li><a href="/photos" title="">GALARY</a></li>
+							<li><a href="/contact" title="">contact us</a></li>
+							<li><a href="/index" title="">NEWSFEED</a></li>
+							<li><a href="/about" title="">ABOUT</a></li>
+
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</footer><!-- footer -->
+<!-- side panel -->
+
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="{% static 'js/main.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/map-init.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+
+</body>
+
+</html>

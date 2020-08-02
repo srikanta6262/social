@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}" type="text/css">
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+
+    <meta name="keywords" content="" />
+	<title>Views</title>
+    <link rel="icon" href="{% static 'images/fav.png' %}" type="image/png" sizes="16x16">
+    <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"
+     nonce="pY5MNG9y">
+   </script>
+   <script async defer crossorigin="anonymous"
+   src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="DRpLLW0o">
+ </script>
+<style>
+*
+
+form {
+  width: 320px;
+  float: left;
+  margin: 20px;
+}
+form > div {
+  position: relative;
+  overflow: hidden;
+}
+form input {
+  width: 100%;
+  border: 1px solid red;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8px 12px;
+  outline: 0;
+}
+form textarea {
+  width: 100%;
+  border: 1px solid white;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8px 12px;
+  outline: 0;
+}
+form input:valid, form textarea:valid {
+  background: white;
+}
+form input:focus, form textarea:focus {
+  border-color: #f06d06;
+}
+form input:focus + label, form textarea:focus + label {
+  background: #f06d06;
+  color: white;
+  font-size: 70%;
+  padding: 1px 6px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+form label {
+  transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
+  position: absolute;
+  color: #999;
+  padding: 7px 6px;
+}
+form textarea {
+  display: block;
+  resize: vertical;
+}
+
+form.go-right label {
+  top: 2px;
+  right: 100%;
+  width: 100%;
+  margin-right: -100%;
+  bottom: 2px;
+}
+form.go-right input:focus + label, form.go-right textarea:focus + label {
+  right: 0;
+  margin-right: 0;
+  width: 30%;
+  padding-top: 4px;
+}
+</style>
+
+</head>
+<body>
+<!--<div class="se-pre-con"></div>-->
+<div class="theme-layout">
+	<div class="topbar stick">
+		<div class="logo">
+			<a title="" href="/index"><img src="{% static 'images/logo.png' %}" alt=""></a>
+		</div>
+		<div class="top-area">
+			<ul>
+				<li style="margin-top:10px;"><a href="/index" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li><a href="/admin" title="Home" data-ripple="">
+          <img src="{% static 'images/resources/admin.jpg' %}"
+          style="width:40px;height:40px;margin-top:5px;" alt=""></a></li>
+			</ul>
+		</div>
+	</div><!-- topbar -->
+{% if msgcon %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Thank You Friend!</strong>{{msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endif %}
+
+{% if msgin %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Thank You Friend!</strong> {{msgin}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endif %}
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<!-- sidebar -->
+              <div class="col-lg-3">
+								<aside class="sidebar static">
+                </aside>
+              </div>
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="new-postbox">
+										<figure>
+											<img src="{% static 'images/resources/admin2.jpg' %}" alt="">
+										</figure>
+										<div class="newpst-input">
+											<form method="post" enctype="multipart/form-data" class="go-right" action="/insert/">
+                        {% csrf_token %}
+											  <div>
+												<input id="name" name="name" type="text" placeholder=" Enter Your Name *">
+												<label for="name">Your Name</label>
+											  </div><br>
+											  <div>
+												<input id="name1" name="loc" type="text" placeholder="Location">
+												<label for="name1">Location</label>
+											  </div><br>
+												<div>
+													<textarea id="message" name="message" placeholder="Your status"></textarea>
+													<label for="message">Status</label>
+												 </div>
+												<div class="attachments">
+													<ul>
+														<li>
+															<i class="fa fa-image"></i>
+															<label class="fileContainer">
+																<input type="file" name="photo">
+															</label>
+														</li>
+														<li>
+															<i class="fa fa-video-camera"></i>
+															<label class="fileContainer">
+																<input type="file" name="video">
+															</label>
+														</li>
+														<li>
+															<i class="fa fa-camera"></i>
+															<label class="fileContainer">
+																<input type="file" name="camera">
+															</label>
+														</li>
+														<li>
+															<button type="submit">Post</button>
+														</li>
+													</ul>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div><!-- add post new box -->
+								<div class="loadMore">
+{% for x in data %}
+	{% if x.photo%}
+								<div class="central-meta item">
+									<div class="user-post">
+										<div class="friend-info">
+											<figure>
+												<img src="{{x.photo.url}}" alt="">
+											</figure>
+											<div class="friend-name">
+											<ins>{{x.name}}</ins>
+                      {% ifnotequal x.location "" %}
+											<span>{{x.location}}</span>
+                        {% endifnotequal %}
+											<span>published: {{x.postdate}}</span>
+											</div>
+											<div class="post-meta">
+												<img src="{{x.photo.url}}" style="width:500px;height:450px;margin-left:40px" alt="No Image Found">
+												<div class="we-video-info">
+													<ul>
+														<li><img src="{% static 'images/resources/eye.jpg' %}" style="width:40px;height:20px" alt="">
+																<span style="background-color: #4CAF50;color: white;">{{x.seen}}</span>
+																<div class="fb-like" data-href="http://127.0.0.1:8000/index/{{x.photo}}"
+																data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true">
+																</div>
+														</li>
+													</ul>
+												</div>
+												<div class="description">
+												<p>{{x.msg}}</p>
+												</div>
+												<div class="fb-comments" data-href="http://127.0.0.1:8000/index/{{x.photo}}"
+												data-numposts="2" data-width=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+  {% elif x.camera %}
+								<div class="central-meta item">
+									<div class="user-post">
+										<div class="friend-info">
+											<figure>
+												<img src="{{x.camera.url}}" alt="">
+											</figure>
+											<div class="friend-name">
+											<ins>{{x.name}}</ins>
+                      {% ifnotequal x.location "" %}
+											<span>{{x.location}}</span>
+                        {% endifnotequal %}
+											<span>published: {{x.postdate}}</span>
+											</div>
+											<div class="post-meta">
+												<img src="{{x.camera.url}}" style="width:500px;height:450px;margin-left:40px" alt="No Image Found">
+												<div class="we-video-info">
+													<ul>
+														<li><img src="{% static 'images/resources/eye.jpg' %}" style="width:40px;height:20px" alt="">
+																<span style="background-color: #4CAF50;color: white;">{{x.seen}}</span>
+																<div class="fb-like" data-href="http://127.0.0.1:8000/index/{{x.camera}}"
+																data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true">
+																</div>
+														</li>
+													</ul>
+												</div>
+												<div class="description">
+												<p>{{x.msg}}</p>
+												</div>
+												<div class="fb-comments" data-href="http://127.0.0.1:8000/index/{{x.camera}}"
+												data-numposts="2" data-width=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+	{% elif x.video%}
+								<div class="central-meta item">
+									<div class="user-post">
+										<div class="friend-info">
+											<figure>
+												<img src="{% static "images/logo.png" %}" alt="No Image">
+											</figure>
+											<div class="friend-name">
+												<ins>{{x.name}}</ins>
+                        {% ifnotequal x.location "" %}
+  											<span>{{x.location}}</span>
+                          {% endifnotequal %}
+												<span>published: {{x.postdate}}</span>
+											</div>
+											<div class="post-meta">
+												<video id="intro" type="video/mp4" controls preload style="width:500px;height:450px;margin-left:40px">
+												  <source src="{{ x.video.url }}" type="video/mp4">
+												</video>
+												<div class="we-video-info">
+													<ul>
+														<li><img src="{% static 'images/resources/eye.jpg' %}" style="width:40px;height:20px" alt="">
+																<span style="background-color: #4CAF50;color: white;">{{x.seen}}</span>
+														  <div class="fb-like" data-href="http://127.0.0.1:8000/index/{{x.video}}"
+														  data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true">
+														</div>
+														</li>
+													</ul>
+												</div>
+												<div class="description">
+												<p>{{x.msg}}</p>
+												</div>
+													<div class="fb-comments" data-href="http://127.0.0.1:8000/index/{{x.video}}"
+													 data-numposts="2" data-width=""></div>
+												</div>
+										</div>
+									</div>
+								</div>
+  {% else %}
+        				<div class="central-meta item">
+        					<div class="user-post">
+        						<div class="friend-info">
+        							<figure>
+        								<img src="{% static "images/logo.png" %}" alt="">
+        							</figure>
+        							<div class="friend-name">
+        							<ins>{{x.name}}</ins>
+                      {% ifnotequal x.location "" %}
+											<span>{{x.location}}</span>
+                        {% endifnotequal %}
+        							<span>published: {{x.postdate}}</span>
+        							</div>
+        							<div class="post-meta">
+                        <div class="description">
+        								<p>{{x.msg}}</p>
+        								</div>
+        								<div class="we-video-info">
+        									<ul>
+        										<li><img src="{% static 'images/resources/eye.jpg' %}" style="width:40px;height:20px" alt="">
+        												<span style="background-color: #4CAF50;color: white;">{{x.seen}}</span>
+        												<div class="fb-like" data-href="http://127.0.0.1:8000/index/{{x.postdate}}"
+        												data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true">
+        												</div>
+        										</li>
+        									</ul>
+        								</div>
+
+        								<div class="fb-comments" data-href="http://127.0.0.1:8000/index/{{x.postdate}}"
+        								data-numposts="2" data-width=""></div>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+	{% endif %}
+{% endfor %}
+								</div>
+							</div><!-- centerl meta -->
+									<!-- page like widget -->
+                  	<aside class="sidebar static">
+									<!-- friends list sidebar -->
+								</aside>
+							</div><!-- sidebar -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="/index" title=""><img src="{% static 'images/logo.png' %}" alt=""></a>
+							</div>
+							<p>
+                I am a person who is positive about every aspect of life.
+                There are many things I like to do, to see, and to experience. I like to read, I like to write;
+                I like to think, I like to dream; I like to talk, I like to listen.
+                I like to see the sunrise in the morning, I like to see the moonlight at night;
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>Odisha University of Agriculture & Technology.
+                  Unit 8, Surya Nagar, Bhubaneswar, Odisha 751003
+                  </p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>+91-7608864804</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/" title="">facebook</a></li>
+							<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+							<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+							<li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+              <li><a href="/index" title="">NEWSFEED</a></li>
+							<li><a href="/photos" title="">GALARY</a></li>
+							<li><a href="/contact" title="">contact us</a></li>
+							<li><a href="/about" title="">ABOUT</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</footer>
+</div><!-- side panel -->
+
+
+	<script src="{% static "js/script.js" %}"></script>
+	<script src="{% static "js/map-init.js" %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<title>Contact</title>
+    <link rel="icon" href="{% static 'images/fav.png' %}" type="image/png" sizes="16x16">
+
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/strip.css' %}" type="text/css">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+
+</head>
+<body>
+<!--<div class="se-pre-con"></div>-->
+<div class="theme-layout">
+	<div class="topbar stick">
+		<div class="logo">
+			<a title="" href="/index"><img src="{% static 'images/logo.png' %}" alt=""></a>
+		</div>
+		<div class="top-area">
+			<ul>
+				<li style="margin-top:10px;"><a href="/index" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li><a href="/admin" title="Home" data-ripple=""><img src="{% static 'images/resources/admin.jpg' %}" style="width:40px;height:40px;margin-top:5px;" alt=""></a></li>
+			</ul>
+		</div>
+	</div><!-- topbar -->
+
+		<section>
+			<div class="gap no-top">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="g-map">
+								<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59879.97841636831!2d85.78543161396716!3d20.279616973529105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8637f30c4b70a955!2sOdisha%20University%20of%20Agriculture%20%26%20Technology!5e0!3m2!1sen!2sin!4v1595870303246!5m2!1sen!2sin"
+								width="1800" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+								<div class="map-meta">
+									<h1>get in touch</h1>
+									<p>this is a google map. you may see our location, or using street view you may the original look of our office.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- google map -->
+
+		<section>
+			<div class="gap no-top overlap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="contct-info">
+								<div class="contact-form">
+									<div class="cnt-title">
+										<span>Send us a message</span>
+										<i><img src="{% static 'images/envelop.png' %}" alt=""></i>
+									</div>
+									<form method="post" action="/feedback/">
+                    {% csrf_token %}
+										<div class="form-group">
+										  <input type="text" id="input" name="name" required="required"/>
+										  <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
+										</div>
+										<div class="form-group">
+										  <input type="text" name="email" required="required"/>
+										  <label class="control-label" for="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e1b333f37321e">[email&#160;protected]</a></label><i class="mtrl-select"></i>
+										</div>
+										<div class="form-group">
+										  <input type="text" name="phone" required="required"/>
+										  <label class="control-label" for="input">Phone No.</label><i class="mtrl-select"></i>
+										</div>
+
+										<div class="form-group">
+										  <textarea rows="4" id="textarea" name="message" required="required"></textarea>
+										  <label class="control-label" for="textarea">Message</label><i class="mtrl-select"></i>
+										</div>
+                    <div class="submit-btns">
+											<button style="width:80px;height:30px;" type="submit"><i class="fa fa-paper-plane"></i></button>
+										</div>
+									</form>
+								</div>
+								<div class="cntct-adres">
+									<h3>contact info</h3>
+									<ul>
+										<li>
+											<i class="ti-location-pin"></i>
+											<span>Odisha University of Agriculture & Technology Bhubaneswar-751003 Odisha, India.</span>
+										</li>
+										<li>
+											<i class="fa fa-mobile-phone"></i>
+											<span>(91) 7608864804</span>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o"></i>
+											<span><a href="https://mail.google.com/" class="__cf_email__">[gayatrisahu2601@gmail.com]</a></span>
+										</li>
+									</ul>
+
+									<h1 class="bg-cntct">LIZZU</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- contact info -->
+
+		<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="/index" title=""><img src="{% static 'images/logo.png' %}" alt=""></a>
+							</div>
+							<p>
+                I am a person who is positive about every aspect of life.
+                There are many things I like to do, to see, and to experience. I like to read, I like to write;
+                I like to think, I like to dream; I like to talk, I like to listen.
+                I like to see the sunrise in the morning, I like to see the moonlight at night;
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>Odisha University of Agriculture & Technology.
+                  Unit 8, Surya Nagar, Bhubaneswar, Odisha 751003
+                </p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>+91-7608864804</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/" title="">facebook</a></li>
+							<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+							<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+							<li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+							<li><a href="/photos" title="">GALARY</a></li>
+							<li><a href="/contact" title="">contact us</a></li>
+							<li><a href="/index" title="">NEWSFEED</a></li>
+							<li><a href="/about" title="">ABOUT</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</footer><!-- footer -->
+
+</div>
+	<!-- side panel -->
+
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="{% static 'js/main.min.js' %}"></script>
+	<script src="{% static 'js/strip.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/map-init.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+
+</body>
+
+</html>
